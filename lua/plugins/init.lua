@@ -26,6 +26,8 @@ return {
         "rust",
         "yaml",
         "dockerfile",
+        "bash",
+        "fish",
       },
     },
   },
