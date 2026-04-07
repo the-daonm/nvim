@@ -12,6 +12,7 @@ local options = {
     c = { "clang-format" },
     cpp = { "clang-format" },
     bash = { "shfmt" },
+    markdown = { "prettier" },
   },
 
   format_on_save = {

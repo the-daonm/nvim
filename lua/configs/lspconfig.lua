@@ -1,6 +1,7 @@
 require("nvchad.configs.lspconfig").defaults()
 
 local servers = {
+  "lua_ls",
   "clangd",
   "pyright",
   "ruff",
@@ -12,6 +13,7 @@ local servers = {
   "gh_actions_ls",
   "docker_language_server",
   "helm_ls",
+  "markdown_oxide"
 }
 
 vim.lsp.config("yamlls", {
