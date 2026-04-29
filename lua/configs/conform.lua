@@ -1,7 +1,7 @@
 local options = {
   formatters_by_ft = {
     lua = { "stylua" },
-    python = { "black" },
+    python = { "ruff_format", "ruff" },
     javascript = { "prettier" },
     typescript = { "prettier" },
     json = { "prettier" },
@@ -13,12 +13,20 @@ local options = {
     cpp = { "clang-format" },
     bash = { "shfmt" },
     markdown = { "prettier" },
+    sql = { "sql_formatter" },
+  },
+
+  formatters = {
+    sql_formatter = {
+      args = { "--config", '{"language":"postgresql"}' },
+    },
   },
 
   format_on_save = {
     -- These options will be passed to conform.format()
     timeout_ms = 500,
-    lsp_fallback = true,
+    -- lsp_fallback = true,
+    lsp_format = "fallback",
   },
 }
 
