@@ -14,7 +14,6 @@ local servers = {
   "docker_language_server",
   "helm_ls",
   "markdown_oxide",
-  "postgres_lsp",
 }
 
 vim.lsp.config("yamlls", {
