@@ -8,3 +8,6 @@ o.relativenumber = true
 o.number = true
 o.swapfile = false
 o.shell = "zsh"
+o.timeoutlen = 1000
+o.conceallevel = 2
+
