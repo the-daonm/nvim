@@ -14,6 +14,7 @@ local options = {
     bash = { "shfmt" },
     markdown = { "prettier" },
     sql = { "sql_formatter" },
+    kdl = { "kdlfmt" },
   },
 
   formatters = {
