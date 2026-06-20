@@ -7,7 +7,7 @@ o.cursorlineopt ='both' -- to enable cursorline!
 o.relativenumber = true
 o.number = true
 o.swapfile = false
-o.shell = "zsh"
+o.shell = "fish"
 o.timeoutlen = 1000
 o.conceallevel = 2
 

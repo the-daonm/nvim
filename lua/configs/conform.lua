@@ -12,6 +12,7 @@ local options = {
     c = { "clang-format" },
     cpp = { "clang-format" },
     bash = { "shfmt" },
+    fish = { "fish_indent" },
     markdown = { "prettier" },
     sql = { "sql_formatter" },
     kdl = { "kdlfmt" },
@@ -20,6 +21,9 @@ local options = {
   formatters = {
     sql_formatter = {
       args = { "--config", '{"language":"postgresql"}' },
+    },
+    kdlfmt = {
+      args = { "format", "--config", vim.fn.stdpath("config") .. "/kdlfmt.kdl", "-" },
     },
   },
 
