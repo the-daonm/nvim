@@ -156,5 +156,6 @@ vim.lsp.config("yamlls", {
 })
 
 vim.lsp.enable(servers)
+require("configs.yaml_schema").setup()
 
 -- read :h vim.lsp.config for changing options of lsp servers
