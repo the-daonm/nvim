@@ -6,9 +6,11 @@ return {
     ft = "markdown",
     dependencies = {
       "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope.nvim",
     },
     opts = {
       legacy_commands = false,
+      picker = { name = "telescope.nvim" },
       workspaces = {
         {
           name = "Notes",
