@@ -1,5 +1,12 @@
 require("nvchad.configs.lspconfig").defaults()
 
+-- Must come after defaults(): NvChad sets its own diagnostic config there
+vim.diagnostic.config {
+  severity_sort = true,
+  virtual_text = { prefix = "", source = "if_many", spacing = 2 },
+  float = { border = "rounded", source = true },
+}
+
 local servers = {
   "lua_ls",
   "clangd",
