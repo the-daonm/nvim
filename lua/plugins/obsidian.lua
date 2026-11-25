@@ -10,6 +10,8 @@ return {
     },
     opts = {
       legacy_commands = false,
+      -- render-markdown.nvim draws the note; two renderers would conflict
+      ui = { enable = false },
       picker = { name = "telescope.nvim" },
       workspaces = {
         {
