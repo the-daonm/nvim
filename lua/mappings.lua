@@ -37,5 +37,7 @@ map("n", "<leader>oq", "<cmd>Obsidian quick_switch<cr>", { desc = "Obsidian: Qui
 map("n", "<leader>ob", "<cmd>Obsidian backlinks<cr>", { desc = "Obsidian: Backlinks" })
 map("n", "<leader>ot", "<cmd>Obsidian tags<cr>", { desc = "Obsidian: Search Tags" })
 
+-- Markdown Preview keymaps
+map("n", "<leader>mp", "<cmd>MarkdownPreviewToggle<cr>", { desc = "Markdown: Toggle Preview" })
 
 
