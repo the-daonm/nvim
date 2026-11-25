@@ -23,6 +23,74 @@ local servers = {
   "markdown_oxide",
 }
 
+-- Python: pyright does types, ruff does lint/imports. Turn off the pyright
+-- checks ruff already reports so problems don't show up twice.
+vim.lsp.config("pyright", {
+  settings = {
+    pyright = { disableOrganizeImports = true },
+    python = {
+      analysis = {
+        typeCheckingMode = "standard",
+        diagnosticSeverityOverrides = {
+          reportUndefinedVariable = "none", -- ruff F821
+          reportUnusedExpression = "none", -- ruff B018
+          reportUnusedImport = "none", -- ruff F401
+          reportUnusedVariable = "none", -- ruff F841
+        },
+      },
+    },
+  },
+})
+
+vim.lsp.config("ruff", {
+  on_attach = function(client)
+    client.server_capabilities.hoverProvider = false -- leave hover to pyright
+  end,
+})
+
+vim.lsp.config("gopls", {
+  settings = {
+    gopls = {
+      gofumpt = true,
+      staticcheck = true,
+      usePlaceholders = true,
+      completeUnimported = true,
+      analyses = { unusedparams = true, unusedwrite = true, nilness = true, shadow = true },
+      hints = {
+        assignVariableTypes = true,
+        compositeLiteralFields = true,
+        constantValues = true,
+        functionTypeParameters = true,
+        parameterNames = true,
+        rangeVariableTypes = true,
+      },
+    },
+  },
+})
+
+-- C/C++: needs compile_commands.json (cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON,
+-- or `bear -- make`) or a compile_flags.txt in real projects
+vim.lsp.config("clangd", {
+  cmd = {
+    "clangd",
+    "--background-index",
+    "--clang-tidy",
+    "--completion-style=detailed",
+    "--function-arg-placeholders=true",
+    "--header-insertion=iwyu",
+  },
+})
+
+vim.lsp.config("rust_analyzer", {
+  settings = {
+    ["rust-analyzer"] = {
+      check = { command = "clippy" }, -- clippy lints on save
+      cargo = { allFeatures = true },
+      procMacro = { enable = true },
+    },
+  },
+})
+
 vim.lsp.config("yamlls", {
   settings = {
     yaml = {
