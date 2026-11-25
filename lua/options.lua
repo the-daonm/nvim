@@ -11,3 +11,8 @@ o.shell = "fish"
 o.timeoutlen = 1000
 o.conceallevel = 2
 
+o.scrolloff = 8
+o.sidescrolloff = 8
+o.inccommand = "split" -- live preview of :s substitutions
+o.confirm = true -- ask to save instead of failing on :q with unsaved changes
+
